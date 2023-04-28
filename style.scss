@@ -16,7 +16,7 @@ body{
     font-family: 'Poppins',sans-serif;
     color: $col-dark;
     background-color: $col-light;
-    overflow: hidden;
+    // overflow: hidden;
 }
 // General Style
 
@@ -260,33 +260,39 @@ main{
         }
 // =================MIDDLE==============
         .middle{
+            
             .stories{
                 display: flex;
                 justify-content: space-between;
                 height: 12rem;
                 gap: 0.5rem;
-                // background-color: red;
 
                 .story{
+                    position: relative;
                     padding: $card-padding;
                     border-radius: $card-border-radius;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: space-between;
                     color: white;
                     font-size: 0.75rem;
                     width: 100%;
                     overflow: hidden;
 
-                    // &::before{
-                    //     content: "";
-                    //     display: block;
-                    //     width: 100%;
-                    //     height: 5rem;
-                    //     background: linear-gradient(white,black);
-                    //     position: absolute;
-                    //     // bottom: 0;
-                    // }
+                    &::before{
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 5rem;
+                        background: linear-gradient(transparent,black);
+                        position: absolute;
+                        bottom: 0;
+                    }
+
+                    .name{
+                        z-index: 2;
+                    }
 
                     &:nth-child(1){
                         background: url(./Assets/story_1.jpg) no-repeat center center/cover;
@@ -306,8 +312,36 @@ main{
                     &:nth-child(6){
                         background: url(./Assets/story_6.jpg)no-repeat center center/cover;
                     }
+
+                    .profile-pic{
+                        width: 2rem;
+                        height: 2rem;
+                        align-self: start;
+                        border: 2px solid $col-primary;
+                    }
                 }
             }
+            .create-post{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: $col-white;
+                padding: 0.4rem $card-padding;
+                margin-top: 1rem;
+                border-radius: $border-radius;
+
+                input[type="text"]{
+                    justify-self: start;
+                    width: 100%;
+                    padding-left: 1rem;
+                    background: transparent;
+                    color: $col-dark;
+                    margin-right: 1rem;
+                }
+            }
+
+
         }
     }
 

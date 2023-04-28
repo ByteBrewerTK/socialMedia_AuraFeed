@@ -15,7 +15,6 @@ body {
   font-family: "Poppins", sans-serif;
   color: hsl(252, 30%, 17%);
   background-color: hsl(252, 30%, 95%);
-  overflow: hidden;
 }
 
 .container {
@@ -231,15 +230,29 @@ main .container .middle .stories {
   gap: 0.5rem;
 }
 main .container .middle .stories .story {
+  position: relative;
   padding: 1rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   color: white;
   font-size: 0.75rem;
   width: 100%;
   overflow: hidden;
+}
+main .container .middle .stories .story::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(transparent, black);
+  position: absolute;
+  bottom: 0;
+}
+main .container .middle .stories .story .name {
+  z-index: 2;
 }
 main .container .middle .stories .story:nth-child(1) {
   background: url(./Assets/story_1.jpg) no-repeat center center/cover;
@@ -258,4 +271,28 @@ main .container .middle .stories .story:nth-child(5) {
 }
 main .container .middle .stories .story:nth-child(6) {
   background: url(./Assets/story_6.jpg) no-repeat center center/cover;
+}
+main .container .middle .stories .story .profile-pic {
+  width: 2rem;
+  height: 2rem;
+  align-self: start;
+  border: 2px solid hsl(252, 75%, 60%);
+}
+main .container .middle .create-post {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(252, 30%, 100%);
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  border-radius: 2rem;
+}
+main .container .middle .create-post input[type="text"] {
+  justify-self: start;
+  width: 100%;
+  padding-left: 1rem;
+  background: transparent;
+  color: hsl(252, 30%, 17%);
+  margin-right: 1rem;
 }/*# sourceMappingURL=style.css.map */
