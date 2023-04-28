@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 @import "_var.scss";
 
 *,
@@ -13,14 +12,12 @@
     list-style: none;
     border: none;
 }
-
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins',sans-serif;
     color: $col-dark;
     background-color: $col-light;
     overflow: hidden;
 }
-
 // General Style
 
 .container{
@@ -46,13 +43,11 @@ img{
     cursor: pointer;
     transition: all 300ms ease;
     font-size: 0.9rem;
-
+    
     &:hover{
         opacity: 0.8;
     }
 }
-
-
 .btn-primary{
     background-color: $col-primary;
     color: $col-white;
@@ -112,7 +107,7 @@ nav{
 
 main{
     position: relative;
-    top: 30rem;
+    top: 7rem;
 
     .container{
         display: grid;
@@ -230,8 +225,10 @@ main{
                 border-radius: $card-border-radius;
 
                 padding: $card-padding;
-                box-shadow: 0 0 2rem hsl($col-primary ,25%);
+                // box-shadow: 0 0 2rem hsl($col-primary ,25%);
+                box-shadow: 0 0 2rem $col-primary;
                 z-index: 8;
+                opacity: 0;
 
                 &::before{
                     content: "";
@@ -242,6 +239,7 @@ main{
                     position: absolute;
                     left: -0.6rem;
                     transform: rotate(45deg);
+                    
 
                 }
 
@@ -252,13 +250,67 @@ main{
                     margin-bottom: 1rem;
 
                 }
+
+                small{
+                    display: block;
+                }
                 
             }
 
+        }
+// =================MIDDLE==============
+        .middle{
+            .stories{
+                display: flex;
+                justify-content: space-between;
+                height: 12rem;
+                gap: 0.5rem;
+                // background-color: red;
+
+                .story{
+                    padding: $card-padding;
+                    border-radius: $card-border-radius;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    color: white;
+                    font-size: 0.75rem;
+                    width: 100%;
+                    overflow: hidden;
+
+                    // &::before{
+                    //     content: "";
+                    //     display: block;
+                    //     width: 100%;
+                    //     height: 5rem;
+                    //     background: linear-gradient(white,black);
+                    //     position: absolute;
+                    //     // bottom: 0;
+                    // }
+
+                    &:nth-child(1){
+                        background: url(./Assets/story_1.jpg) no-repeat center center/cover;
+                    }
+                    &:nth-child(2){
+                        background: url(./Assets/story_2.jpg)no-repeat center center/cover;
+                    }
+                    &:nth-child(3){
+                        background: url(./Assets/story_3.jpg)no-repeat center center/cover;
+                    }
+                    &:nth-child(4){
+                        background: url(./Assets/story_4.jpg)no-repeat center center/cover;
+                    }
+                    &:nth-child(5){
+                        background: url(./Assets/story_5.jpg)no-repeat center center/cover;
+                    }
+                    &:nth-child(6){
+                        background: url(./Assets/story_6.jpg)no-repeat center center/cover;
+                    }
+                }
+            }
         }
     }
 
 
 }
-
 
