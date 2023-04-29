@@ -74,28 +74,29 @@ nav .container {
   justify-content: space-between;
   padding: 0.6rem 1rem;
 }
-nav .search-bar {
+nav .create {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search-bar {
   background: hsl(252, 30%, 95%);
   border-radius: 2rem;
   padding: 0.6rem 1rem;
 }
-nav .search-bar input[type=search] {
+.search-bar input[type=search] {
   background: transparent;
   width: 30vw;
   margin-left: 1rem;
   font-size: 0.9rem;
   color: hsl(252, 30%, 17%);
 }
-nav .search-bar input[type=search] ::-moz-placeholder {
+.search-bar input[type=search] ::-moz-placeholder {
   color: hsl(252, 15%, 65%);
 }
-nav .search-bar input[type=search] ::placeholder {
+.search-bar input[type=search] ::placeholder {
   color: hsl(252, 15%, 65%);
-}
-nav .create {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 }
 
 main {
@@ -288,11 +289,146 @@ main .container .middle .create-post {
   margin-top: 1rem;
   border-radius: 2rem;
 }
-main .container .middle .create-post input[type="text"] {
+main .container .middle .create-post input[type=text] {
   justify-self: start;
   width: 100%;
   padding-left: 1rem;
   background: transparent;
   color: hsl(252, 30%, 17%);
   margin-right: 1rem;
+}
+main .container .middle .feeds .feed {
+  background: hsl(252, 30%, 100%);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+main .container .middle .feeds .feed .head {
+  display: flex;
+  justify-content: space-between;
+}
+main .container .middle .feeds .feed .head .user {
+  display: flex;
+  gap: 1rem;
+}
+main .container .middle .feeds .feed .photo {
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0.7rem 0;
+}
+main .container .middle .feeds .feed .action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0.6rem;
+}
+main .container .middle .liked-by {
+  display: flex;
+}
+main .container .middle .liked-by span {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid hsl(252, 30%, 100%);
+  margin-left: -0.6rem;
+}
+main .container .middle .liked-by span:first-child {
+  margin: 0;
+}
+main .container .middle .liked-by p {
+  margin-left: 0.5rem;
+}
+main .container .right {
+  height: -moz-max-content;
+  height: max-content;
+  position: sticky;
+  top: -18rem;
+  bottom: 0;
+}
+main .container .right .messages {
+  background: hsl(252, 30%, 100%);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+main .container .right .messages .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+main .container .right .messages i {
+  font-size: 1.4rem;
+}
+main .container .right .messages .search-bar {
+  display: flex;
+  margin-bottom: 1rem;
+}
+main .container .right .messages .category {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+main .container .right .messages .category h6 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 4px solid hsl(252, 30%, 95%);
+  padding-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+main .container .right .messages .category .active {
+  border-color: hsl(252, 30%, 17%);
+}
+main .container .right .messages .message {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: start;
+}
+main .container .right .messages .message:last-child {
+  margin: 0;
+}
+main .container .right .messages .message p {
+  font-size: 0.8rem;
+}
+main .container .right .messages .message .profile-pic {
+  position: relative;
+  overflow: visible;
+}
+main .container .right .messages .message .profile-pic img {
+  border-radius: 50%;
+}
+main .container .right .messages .message .profile-pic .active {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 3px solid hsl(252, 30%, 100%);
+  background: hsl(120, 95%, 65%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+main .container .right .messages .message-request {
+  color: hsl(252, 75%, 60%);
+}
+main .container .right .friend-requests {
+  margin-top: 1rem;
+}
+main .container .right .friend-requests h4 {
+  color: hsl(252, 15%, 65%);
+  margin: 1rem 0;
+}
+main .container .right .friend-requests .request {
+  background: hsl(252, 30%, 100%);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 0.7rem;
+}
+main .container .right .friend-requests .request .info {
+  display: flex;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */
