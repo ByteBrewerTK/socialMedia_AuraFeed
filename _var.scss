@@ -1,18 +1,18 @@
-$col-white : hsl(252, 30%, 100%);
-$col-light : hsl(252, 30%, 95%);
-$col-gray : hsl(252, 15%, 65%);
-$col-primary: hsl(252, 75%, 60%);
-$col-secondary : hsl(252,100%, 90%);
-$col-success : hsl(120, 95%, 65%);
-$col-danger : hsl(0, 95%, 65%);
-$col-dark : hsl(252, 30%, 17%);
-$col-black : hsl(252, 30%, 10%);
+$col-white : var(--col-white);
+$col-light : var(--col-light);
+$col-gray : var(--col-gray);
+$col-primary: var(--col-primary);
+$col-secondary : var(--col-secondary);
+$col-success : var(--col-success);
+$col-danger : var(--col-danger);
+$col-dark : var(--col-dark);
+$col-black : var(--col-black);
 
-$border-radius:2rem;
-$card-border-radius:1rem;
-$btn-padding: 0.6rem 2rem;
-$search-padding: 0.6rem 1rem;
-$card-padding: 1rem;
+$border-radius:var(--border-radius);
+$card-border-radius:var(--card-border-radius);
+$btn-padding: var(--btn-padding);
+$search-padding: var(--search-padding);
+$card-padding: var(--card-padding);
 
-$sticky-top-left: 5.4rem;
-$sticky-top-right: -18rem;
+$sticky-top-left: var(--sticky-top-left);
+$sticky-top-right: var(--sticky-top-right);
