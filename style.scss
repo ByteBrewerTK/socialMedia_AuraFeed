@@ -290,10 +290,6 @@ main{
                 height: 12rem;
                 gap: 0.5rem;
                 width: 100%;
-                // overflow: scroll;
-                // &::-webkit-scrollbar{
-                //     display: none;
-                //   }
 
                 .story{
                     position: relative;
@@ -305,7 +301,6 @@ main{
                     justify-content: space-between;
                     color: white;
                     font-size: 0.75rem;
-                    // aspect-ratio: 9/16;
                     overflow: hidden;    
                     
 
@@ -569,6 +564,7 @@ main{
     display: grid;
     place-items: center;
     font-size: 0.9rem;
+    
     display: none;
 
     .card{
@@ -576,6 +572,39 @@ main{
         padding: 3rem;
         border-radius: $card-border-radius;
         width: 50%;
+        box-shadow: 0 0 1rem $col-primary;
+        position: relative;
+
+        .cross-icon{
+            width: 40px;
+            height: 40px;
+            background:black;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: .2rem .2rem;
+            transition: all .2s;
+            &:hover{
+                // transform: scale(1.1);
+                background-color: red;
+                color: white;
+            }
+
+            
+
+            i{
+                font-size: 1.5rem;
+                cursor: pointer;
+                
+            }
+
+        }
     }
 
     // ===============FONT SIZE==============
@@ -735,7 +764,9 @@ MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABLETS
     .sidebar h3{
         display: none;
     }
-    
+    .customize-theme .card{
+        width: 96vw;
+    }
 
 }
 
@@ -778,6 +809,10 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         .right{
             display: none;
         }
+    }
+
+    .customize-theme .card{
+        width: 92vw;
     }
 
 }

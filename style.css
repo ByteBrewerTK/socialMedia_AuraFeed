@@ -484,6 +484,32 @@ main .container .right .friend-requests .request .action {
   padding: 3rem;
   border-radius: var(--card-border-radius);
   width: 50%;
+  box-shadow: 0 0 1rem var(--col-primary);
+  position: relative;
+}
+.customize-theme .card .cross-icon {
+  width: 40px;
+  height: 40px;
+  background: black;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem 0.2rem;
+  transition: all 0.2s;
+}
+.customize-theme .card .cross-icon:hover {
+  background-color: red;
+  color: white;
+}
+.customize-theme .card .cross-icon i {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 .customize-theme .font-size {
   margin-top: 5rem;
@@ -618,6 +644,9 @@ MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABLETS
   .sidebar h3 {
     display: none;
   }
+  .customize-theme .card {
+    width: 96vw;
+  }
 }
 /*
 =================================================
@@ -653,5 +682,8 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
   }
   main .container .right {
     display: none;
+  }
+  .customize-theme .card {
+    width: 92vw;
   }
 }/*# sourceMappingURL=style.css.map */

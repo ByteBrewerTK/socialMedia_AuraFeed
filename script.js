@@ -12,7 +12,19 @@ const messageSearch = document.querySelector('#message-search');
 
 
 // THEME
+const theme  = document.querySelector('#theme');
 
+// THEME MODAL
+const themeModal = document.querySelector('.customize-theme');
+
+//THEME MODAL CROSS BUTTON
+const cross = document.querySelector('.cross-icon');
+
+// FONT SIZE
+const fontSize = document.querySelectorAll('.choose-size span');
+
+// ROOT 
+var root = document.querySelector(':root');
 
 
 
@@ -72,4 +84,73 @@ messagesNotification.addEventListener('click', () => {
     setTimeout(() =>{
         messages.style.boxShadow = 'none';
     },2000);
+})
+
+// THEME DISPLAY CUSTOMIZATION
+
+const openThemeModal = () => {
+    themeModal.style.display = 'grid';
+}
+
+theme.addEventListener('click', openThemeModal);
+
+const crossThemeModal = () => {
+    themeModal.style.display = 'none';
+}
+
+const closeThemeModal = (e) => {
+    if(e.target.classList.contains('customize-theme')){
+        themeModal.style.display = 'none';
+    }
+}
+themeModal.addEventListener('click', closeThemeModal);
+cross.addEventListener('click', crossThemeModal);
+
+// ===========================FONTS===========================
+
+
+// remove active class from spans or font six=ze selector
+
+const removeSizeSelector = () => {
+    fontSize.forEach(size => {
+        size.classList.remove('active');
+    })
+}
+
+fontSize.forEach(size => {
+    
+
+   size.addEventListener('click', () => {
+
+    let fontSize;
+    removeSizeSelector();
+    size.classList.toggle('active');
+
+    if(size.classList.contains('font-size-1')){
+        fontSize = '10px';
+        root.style.setProperty('--sticky-top-left', '5.4rem');
+        root.style.setProperty('--sticky-top-right', '5.4rem');
+
+    }else if(size.classList.contains('font-size-2')){
+        fontSize = '13px';
+        root.style.setProperty('--sticky-top-left', '5.4rem');
+        root.style.setProperty('--sticky-top-right', '-7rem');
+    }else if(size.classList.contains('font-size-3')){
+        fontSize = '16px';
+        root.style.setProperty('--sticky-top-left', '-2rem');
+        root.style.setProperty('--sticky-top-right', '-17rem');
+    }else if(size.classList.contains('font-size-4')){
+        fontSize = '19px';
+        root.style.setProperty('--sticky-top-left', '-5rem');
+        root.style.setProperty('--sticky-top-right', '-25rem');
+    }else if(size.classList.contains('font-size-5')){
+        fontSize = '22px';
+        root.style.setProperty('--sticky-top-left', '-12rem');
+        root.style.setProperty('--sticky-top-right', '-35rem');
+    }
+
+    // change font size of the root html element
+    document.querySelector('html').style.fontSize = fontSize;
+   })
+
 })
