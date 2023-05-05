@@ -25,6 +25,7 @@ const fontSize = document.querySelectorAll('.choose-size span');
 
 // ROOT 
 var root = document.querySelector(':root');
+// const root =document.documentElement;
 
 // Background color
 const Bg1 = document.querySelector('.bg-1');
@@ -136,25 +137,25 @@ fontSize.forEach(size => {
 
     if(size.classList.contains('font-size-1')){
         fontSize = '10px';
-        root.style.setProperty(--sticky-top-left, '5.4rem');
-        root.style.setProperty(--sticky-top-right, '5.4rem');
+        root.style.setProperty('--sticky-top-left', '5.4rem');
+        root.style.setProperty('--sticky-top-right', '5.4rem');
 
     }else if(size.classList.contains('font-size-2')){
         fontSize = '13px';
-        root.style.setProperty(--sticky-top-left, '5.4rem');
-        root.style.setProperty(--sticky-top-right, '-7rem');
+        root.style.setProperty('--sticky-top-left', '5.4rem');
+        root.style.setProperty('--sticky-top-right', '-7rem');
     }else if(size.classList.contains('font-size-3')){
         fontSize = '16px';
-        root.style.setProperty(--sticky-top-left, '-2rem');
-        root.style.setProperty(--sticky-top-right, '-17rem');
+        root.style.setProperty('--sticky-top-left', '-2rem');
+        root.style.setProperty('--sticky-top-right', '-17rem');
     }else if(size.classList.contains('font-size-4')){
         fontSize = '19px';
-        root.style.setProperty(--sticky-top-left, '-5rem');
-        root.style.setProperty(--sticky-top-right, '-25rem');
+        root.style.setProperty('--sticky-top-left', '-5rem');
+        root.style.setProperty('--sticky-top-right', '-25rem');
     }else if(size.classList.contains('font-size-5')){
         fontSize = '22px';
-        root.style.setProperty(--sticky-top-left, '-12rem');
-        root.style.setProperty(--sticky-top-right, '-35rem');
+        root.style.setProperty('--sticky-top-left', '-12rem');
+        root.style.setProperty('--sticky-top-right', '-35rem');
     }
 
     // change font size of the root html element
@@ -193,7 +194,7 @@ colorPalette.forEach(color => {
             primaryHue = 202;
             color.classList.add('active');
         }
-        root.style.setProperty('--primary-color-hue', 
+        root.style.setProperty('--primary-col-hue', 
         primaryHue);         
     })
 })
@@ -206,9 +207,11 @@ let darkColorLightness,
 //Changes background color 
 
 const changeBG = () =>{
-    root.style.setProperty(--light-col-lightness, lightColorLightness);
-    root.style.setProperty(--white-col-lightness, whiteColorLightness);
-    root.style.setProperty(--dark-col-lightness, darkColorLightness);
+    root.style.setProperty('--light-col-lightnees', lightColorLightness);
+    root.style.setProperty('--white-col-lightnees', whiteColorLightness);
+    root.style.setProperty('--dark-col-lightnees', darkColorLightness);
+    console.log("ohk")
+
 }
 
 
@@ -224,6 +227,7 @@ Bg2.addEventListener('click', () =>{
     // Remove active class from the others
     Bg1.classList.remove('active');
     Bg3.classList.remove('active');
+    // window.location.reload()
 
     changeBG();
 })
@@ -241,6 +245,7 @@ Bg3.addEventListener('click', () =>{
     // Remove active class from the others
     Bg1.classList.remove('active');
     Bg2.classList.remove('active');
+    // window.location.reload()
 
     changeBG();
 })
