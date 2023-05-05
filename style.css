@@ -12,14 +12,18 @@
 }
 
 :root {
-  --col-white: hsl(252, 30%, 100%);
-  --col-light: hsl(252, 30%, 95%);
+  --primary-col-hue:252;
+  --dark-col-lightnees:17%;
+  --light-col-lightnees:95%;
+  --white-col-lightnees:100%;
+  --col-white: hsl(252, 30%, var(--white-col-lightnees));
+  --col-light: hsl(252, 30%, var(--light-col-lightnees));
   --col-gray: hsl(252, 15%, 65%);
-  --col-primary: hsl(252, 75%, 60%);
+  --col-primary: hsl(var(--primary-col-hue), 75%, 60%);
   --col-secondary: hsl(252,100%, 90%);
   --col-success: hsl(120, 95%, 65%);
   --col-danger: hsl(0, 95%, 65%);
-  --col-dark: hsl(252, 30%, 17%);
+  --col-dark: hsl(252, 30%, var(--dark-col-lightnees));
   --col-black: hsl(252, 30%, 10%);
   --border-radius:2rem;
   --card-border-radius:1rem;
@@ -351,6 +355,9 @@ main .container .middle .feeds .feed .action-buttons {
   font-size: 1.4rem;
   margin: 0.6rem;
 }
+main .container .middle .feeds .feed .action-buttons .interaction-button span .liked {
+  color: red;
+}
 main .container .middle .liked-by {
   display: flex;
 }
@@ -556,6 +563,7 @@ main .container .right .friend-requests .request .action {
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 .customize-theme .choose-color span:nth-child(1) {
   background: hsl(252, 75%, 60%);

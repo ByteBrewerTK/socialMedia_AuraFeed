@@ -26,6 +26,14 @@ const fontSize = document.querySelectorAll('.choose-size span');
 // ROOT 
 var root = document.querySelector(':root');
 
+// Background color
+const Bg1 = document.querySelector('.bg-1');
+const Bg2 = document.querySelector('.bg-2');
+const Bg3 = document.querySelector('.bg-3');
+
+
+const colorPalette = document.querySelectorAll('.choose-color span');
+
 
 
 // Remove active class from all menu item
@@ -128,29 +136,127 @@ fontSize.forEach(size => {
 
     if(size.classList.contains('font-size-1')){
         fontSize = '10px';
-        root.style.setProperty('--sticky-top-left', '5.4rem');
-        root.style.setProperty('--sticky-top-right', '5.4rem');
+        root.style.setProperty(--sticky-top-left, '5.4rem');
+        root.style.setProperty(--sticky-top-right, '5.4rem');
 
     }else if(size.classList.contains('font-size-2')){
         fontSize = '13px';
-        root.style.setProperty('--sticky-top-left', '5.4rem');
-        root.style.setProperty('--sticky-top-right', '-7rem');
+        root.style.setProperty(--sticky-top-left, '5.4rem');
+        root.style.setProperty(--sticky-top-right, '-7rem');
     }else if(size.classList.contains('font-size-3')){
         fontSize = '16px';
-        root.style.setProperty('--sticky-top-left', '-2rem');
-        root.style.setProperty('--sticky-top-right', '-17rem');
+        root.style.setProperty(--sticky-top-left, '-2rem');
+        root.style.setProperty(--sticky-top-right, '-17rem');
     }else if(size.classList.contains('font-size-4')){
         fontSize = '19px';
-        root.style.setProperty('--sticky-top-left', '-5rem');
-        root.style.setProperty('--sticky-top-right', '-25rem');
+        root.style.setProperty(--sticky-top-left, '-5rem');
+        root.style.setProperty(--sticky-top-right, '-25rem');
     }else if(size.classList.contains('font-size-5')){
         fontSize = '22px';
-        root.style.setProperty('--sticky-top-left', '-12rem');
-        root.style.setProperty('--sticky-top-right', '-35rem');
+        root.style.setProperty(--sticky-top-left, '-12rem');
+        root.style.setProperty(--sticky-top-right, '-35rem');
     }
 
     // change font size of the root html element
     document.querySelector('html').style.fontSize = fontSize;
    })
 
+})
+
+
+// remove active class from colors
+const changeActiveColorClass = () => {
+    colorPalette.forEach(colorPicker => {
+        colorPicker.classList.remove('active');
+    })
+}
+// Change primary color
+
+colorPalette.forEach(color => {
+    color.addEventListener('click', () =>{
+        let primaryHue;
+
+        changeActiveColorClass();
+        if(color.classList.contains('color-1')){
+            primaryHue = 252;
+            color.classList.add('active');
+        }else if(color.classList.contains('color-2')){
+            primaryHue = 52;
+            color.classList.add('active');
+        }else if(color.classList.contains('color-3')){
+            primaryHue = 352;
+            color.classList.add('active');
+        }else if(color.classList.contains('color-4')){
+            primaryHue = 152;
+            color.classList.add('active');
+        }else if(color.classList.contains('color-5')){
+            primaryHue = 202;
+            color.classList.add('active');
+        }
+        root.style.setProperty('--primary-color-hue', 
+        primaryHue);         
+    })
+})
+
+// Theme Background values
+let darkColorLightness,
+    whiteColorLightness,
+    lightColorLightness ;
+
+//Changes background color 
+
+const changeBG = () =>{
+    root.style.setProperty(--light-col-lightness, lightColorLightness);
+    root.style.setProperty(--white-col-lightness, whiteColorLightness);
+    root.style.setProperty(--dark-col-lightness, darkColorLightness);
+}
+
+
+Bg2.addEventListener('click', () =>{
+    darkColorLightness = '95%';
+    whiteColorLightness = '20%';
+    lightColorLightness = '15%';
+
+
+    // Add active class
+    Bg2.classList.add('active');
+
+    // Remove active class from the others
+    Bg1.classList.remove('active');
+    Bg3.classList.remove('active');
+
+    changeBG();
+})
+
+
+Bg3.addEventListener('click', () =>{
+    darkColorLightness = '95%';
+    whiteColorLightness = '10%';
+    lightColorLightness = '0%';
+
+
+    // Add active class
+    Bg3.classList.add('active');
+
+    // Remove active class from the others
+    Bg1.classList.remove('active');
+    Bg2.classList.remove('active');
+
+    changeBG();
+})
+
+Bg1.addEventListener('click', () =>{
+    // darkColorLightness = '17%';
+    // whiteColorLightness = '100%';
+    // lightColorLightness = '95%';
+
+
+    // Add active class
+    Bg1.classList.add('active');
+
+    // Remove active class from the others
+    Bg3.classList.remove('active');
+    Bg2.classList.remove('active');
+
+   window.location.reload()
 })
